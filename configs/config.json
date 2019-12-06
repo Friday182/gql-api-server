@@ -1,0 +1,13 @@
+{
+    "server": {
+        "endpoint":"http://localhost:8080"
+    },
+    "orm": {
+        "db":"sqlite3",
+        "host":"",
+        "pw":""
+    },
+    "graphql":{
+        "route":"/graphql"
+    }
+}
