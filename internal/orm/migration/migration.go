@@ -4,7 +4,7 @@ import (
 	"fmt"
 	log "log"
 	"github.com/jinzhu/gorm"
-	"gql-api-server/internal/orm/models"
+	"github.com/friday182/gql-api-server/internal/orm/models"
 	"gopkg.in/gormigrate.v1"
 )
 
