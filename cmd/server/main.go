@@ -4,8 +4,8 @@ import (
 	log "log"
 	"time"
 
+	"github.com/friday182/gql-api-server/internal/orm"
 	"github.com/gin-contrib/cors"
-	// "gql-api-server/internal/orm"
 
 	"github.com/gin-gonic/gin"
 	// "gql-api-server/internal/handlers"
@@ -33,6 +33,11 @@ func main() {
 		AllowCredentials: true,
 		MaxAge:           12 * time.Hour,
 	}))
+
+	db, err := orm.InitOrm()
+	if err != nil {
+		log.Panic("[ORM] err: ", err)
+	}
 
 	// Handlers
 	// Simple keep-alive/ping handler
