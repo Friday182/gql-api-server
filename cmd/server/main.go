@@ -8,7 +8,7 @@ import (
 	"github.com/gin-contrib/cors"
 
 	"github.com/gin-gonic/gin"
-	// "gql-api-server/internal/handlers"
+	// "github.com/friday182/gql-api-server/internal/handlers"
 )
 
 var host, port string
@@ -23,6 +23,7 @@ func init() {
 func main() {
 	endpoint := "http://" + host + ":" + port
 
+	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
@@ -39,17 +40,10 @@ func main() {
 		log.Panic("[ORM] err: ", err)
 	}
 
-	// Handlers
-	// Simple keep-alive/ping handler
-	//r.GET("/heartbeat", handlers.Heartbeat())
-
 	// GraphQL handlers
-	//r.POST("/graghql", handlers.GraphqlHandler(orm))
+	r.POST("/graghql", handlers.GraphqlHandler(db))
 	log.Println("GraphQL @ " + endpoint + "/graphql")
 
 	// Run the server
-	// Inform the user where the server is listening
-	log.Println("Running @ " + endpoint)
-	// Print out and exit(1) to the OS if the server cannot run
 	log.Fatal(r.Run(host + ":" + port))
 }

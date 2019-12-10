@@ -7,16 +7,17 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-func InitOrm() (*ORM, error) {
-	db, err := gorm.Open("sqlite3", "/tmp/gorm.db")
+func InitOrm() (*gorm.DB, error) {
+	db, err := gorm.Open("sqlite3", "../../gorm.db")
 	if err != nil {
 		log.Panic("[ORM] err: ", err)
 	}
 
-	// Set log mode
-	db.LogMode(logMode)
+	db.LogMode(true)
 	err = RunMigration(&db)
-	log.Println("[ORM] Database connection initialized.")
+
+	log.Println("[ORM] Database is ready.")
+
 	return orm, err
 }
 

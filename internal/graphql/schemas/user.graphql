@@ -1,0 +1,25 @@
+
+type User {
+  id: ID!
+  name: String!
+  createdAt: Time!
+  updatedAt: Time
+  email: String!
+  role: String!
+  todos: [Todo!]!
+}
+
+input UserSigninInput {
+  email: String
+  token: String
+}
+
+input UserSignupInput {
+  email: String
+  password: String
+}
+
+type Mutation {
+  Signin(input: UserSigninInput!): User!
+  Signup(input: UserSignupInput!): User!
+}
