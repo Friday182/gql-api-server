@@ -4,9 +4,6 @@ type Todo {
   done: Boolean!
 }
 
-type Query {
-  todos: [Todo!]!
-}
 
 input NewTodo {
   text: String!

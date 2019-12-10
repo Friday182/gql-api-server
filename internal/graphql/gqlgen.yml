@@ -3,7 +3,7 @@
 # for detailed .gqlgen.yml documentation.
 
 schema:
-  - internal/graphql/schemas/*.graphql
+  - internal/graphql/schemas/user.graphql
 
 exec:
   filename: internal/graphql/generated/exec_gen.go

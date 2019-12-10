@@ -23,3 +23,5 @@ type Mutation {
   Signin(input: UserSigninInput!): User!
   Signup(input: UserSignupInput!): User!
 }
+
+type Query {}
