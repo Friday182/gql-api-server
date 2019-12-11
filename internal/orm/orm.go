@@ -3,16 +3,27 @@ package orm
 import (
 	"log"
 
-	"github.com/friday182/gql-api-server/internal/orm/models"
 	"github.com/jinzhu/gorm"
 )
 
+<<<<<<< HEAD
+func ConnectDb() *gorm.DB {
+	env := "debug"
+	db, err := gorm.Open("sqlite3", "./gorm.db")
+=======
 func InitOrm() (*gorm.DB, error) {
 	db, err := gorm.Open("sqlite3", "../../gorm.db")
+>>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b
 	if err != nil {
-		log.Panic("[ORM] err: ", err)
+		panic("[ORM] Connect Database Failed ")
 	}
 
+<<<<<<< HEAD
+	if env != "producton" {
+		db.LogMode(true)
+	}
+	log.Println("[ORM] Database is ready.")
+=======
 	db.LogMode(true)
 	err = RunMigration(&db)
 
@@ -20,9 +31,7 @@ func InitOrm() (*gorm.DB, error) {
 
 	return orm, err
 }
+>>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b
 
-func RunMigration(db *gorm.DB) error {
-	return db.AutoMigrate(
-		&models.User{},
-	).Error
+	return db
 }

@@ -3,6 +3,20 @@
 # for detailed .gqlgen.yml documentation.
 
 schema:
+<<<<<<< HEAD
+  - schemas/*.graphql
+
+exec:
+  filename: generated/exec_gen.go
+  package: generated
+
+model:
+  filename: generated/model_gen.go
+  package: generated
+
+resolver:
+  filename: resolvers/resolver_gen.go
+=======
   - internal/graphql/schemas/user.graphql
 
 exec:
@@ -15,10 +29,14 @@ model:
 
 resolver:
   filename: internal/graphql/resolvers/resolver_gen.go
+>>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b
   type: Resolver
   package: resolvers
 
 autobind: []
+<<<<<<< HEAD
+=======
 models:
   User:
     model: github.com/friday182/gql-api-server/internal/orm/models.User
+>>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b

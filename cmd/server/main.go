@@ -2,11 +2,8 @@ package main
 
 import (
 	log "log"
-	"time"
 
 	"github.com/friday182/gql-api-server/internal/orm"
-	"github.com/gin-contrib/cors"
-
 	"github.com/gin-gonic/gin"
 	// "github.com/friday182/gql-api-server/internal/handlers"
 )
@@ -26,6 +23,10 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 	r := gin.Default()
 
+<<<<<<< HEAD
+	db := orm.ConnectDb()
+	defer db.Close()
+=======
 	r.Use(cors.New(cors.Config{
 		// AllowOriginFunc:  func(origin string) bool { return origin == "http://localhost:3000" },
 		AllowOriginFunc:  func(origin string) bool { return true },
@@ -39,6 +40,7 @@ func main() {
 	if err != nil {
 		log.Panic("[ORM] err: ", err)
 	}
+>>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b
 
 	// GraphQL handlers
 	r.POST("/graghql", handlers.GraphqlHandler(db))
