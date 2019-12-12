@@ -5,28 +5,23 @@ package resolvers
 import (
 	"context"
 
-	gqlmodels "github.com/wtlin1228/go-gql-server/internal/gql/models"
-	"github.com/wtlin1228/go-gql-server/internal/orm/models"
+	"github.com/friday182/gql-api-server/internal/graphql/generated"
+	// "github.com/friday182/gql-api-server/internal/orm/models"
 )
 
 // Mutations
-func (r *mutationResolver) Signin(ctx context.Context, input *gqlmodels.UserInput) (string, error) {
-	// Implement your login logic here
-	return "MyFakeToken", nil
-}
-
-func (r *mutationResolver) Signup(ctx context.Context, input *gqlmodels.UserInput) (string, error) {
+func (r *mutationResolver) Signup(ctx context.Context, email string, password string) (*generated.User, error) {
 	// Create new user
 	// email := c.get("email")
-	if r.db.find(&email).RecordNotFound() {
+	if r.Db.Find(&email).RecordNotFound() {
 		// New user, create account
 	} else {
 		// exist user, go to signin page
 	}
-	return "MyFakeToken", nil
+	var tmp *generated.User
+	return tmp, nil
 }
-
-// Queries
-func (r *queryResolver) ID(ctx context.Context, obj *models.User) (string, error) {
+func (r *mutationResolver) Signin(ctx context.Context, email string, token string) (*generated.User, error) {
 	panic("not implemented")
 }
+

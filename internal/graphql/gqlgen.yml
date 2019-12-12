@@ -1,9 +1,8 @@
-# go-gql-server gqlgen.yml file
+# gql-api-server gqlgen.yml file
 # Refer to https://gqlgen.com/config/
 # for detailed .gqlgen.yml documentation.
 
 schema:
-<<<<<<< HEAD
   - schemas/*.graphql
 
 exec:
@@ -15,28 +14,8 @@ model:
   package: generated
 
 resolver:
-  filename: resolvers/resolver_gen.go
-=======
-  - internal/graphql/schemas/user.graphql
-
-exec:
-  filename: internal/graphql/generated/exec_gen.go
-  package: generated
-
-model:
-  filename: internal/graphql/models/model_gen.go
-  package: gqlmodels
-
-resolver:
-  filename: internal/graphql/resolvers/resolver_gen.go
->>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b
+  filename: resolvers/generated/resolver_gen.go
   type: Resolver
   package: resolvers
 
 autobind: []
-<<<<<<< HEAD
-=======
-models:
-  User:
-    model: github.com/friday182/gql-api-server/internal/orm/models.User
->>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b

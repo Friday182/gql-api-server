@@ -1,10 +1,9 @@
-type Query {
-  Todos(userId: String!): [Todo!]!
-}
-
 type Mutation {
+  AddTodo(input: NewTodo!): Boolean!
   Signup(email: String!, password: String!): User!
   Signin(email: String!, token: String!): User!
-    AddTodo(input: NewTodo!): Boolean!
+}
 
+type Query {
+  Todos(userId: String!): [Todo!]!
 }

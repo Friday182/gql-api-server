@@ -4,19 +4,7 @@ type Todo {
   done: Boolean!
 }
 
-
 input NewTodo {
   text: String!
   userId: String!
 }
-<<<<<<< HEAD
-=======
-
-type Mutation {
-  AddTodo(input: NewTodo!): Boolean!
-}
-
-type Query {
-  Todos(userId: String!): [Todo!]!
-}
->>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b

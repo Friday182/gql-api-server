@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 scalar Time
-=======
->>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b
 
 type User {
   id: ID!
@@ -13,23 +10,3 @@ type User {
   todos: [Todo!]!
 }
 
-<<<<<<< HEAD
-
-=======
-input UserSigninInput {
-  email: String
-  token: String
-}
-
-input UserSignupInput {
-  email: String
-  password: String
-}
-
-type Mutation {
-  Signin(input: UserSigninInput!): User!
-  Signup(input: UserSignupInput!): User!
-}
-
-type Query {}
->>>>>>> a90de4222185d7b88e1a4b4ee6f5070fa2251e5b
